@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacybeleid — GymActiv</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F7F6F2;
+    --card: #FFFFFF;
+    --green: #4A6741;
+    --green-mid: #5C7F52;
+    --green-pale: #EBF0E8;
+    --green-border: #D4E0D0;
+    --text: #1C1C1E;
+    --muted: #8E8E93;
+    --border: #E5E5EA;
+  }
+
+  body {
+    font-family: 'Sora', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  header {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #5C7F52, #2A4825);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .logo-mark svg { width: 20px; height: 20px; }
+
+  .logo-text {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.5px;
+  }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 20px 64px;
+  }
+
+  .hero {
+    background: var(--green);
+    border-radius: 20px;
+    padding: 28px 24px;
+    margin-bottom: 24px;
+    color: white;
+  }
+
+  .hero-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    opacity: 0.7;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .hero-title {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+
+  .hero-version {
+    font-size: 12px;
+    opacity: 0.65;
+    margin-bottom: 16px;
+  }
+
+  .hero-intro {
+    font-size: 14px;
+    line-height: 1.7;
+    opacity: 0.9;
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 14px 16px;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .section {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 12px;
+    border: 1px solid var(--border);
+  }
+
+  .section-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--green);
+    margin-bottom: 12px;
+    letter-spacing: -0.2px;
+  }
+
+  .body-text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text);
+    margin-top: 12px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .bullet {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 6px;
+    align-items: flex-start;
+  }
+
+  .bullet-dot {
+    color: var(--green);
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .bullet-text {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text);
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    gap: 16px;
+  }
+
+  .row:last-child { border-bottom: none; }
+
+  .row-left {
+    font-size: 13px;
+    color: var(--text);
+    flex: 1;
+  }
+
+  .row-right {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green);
+    text-align: right;
+  }
+
+  footer {
+    text-align: center;
+    padding: 32px 20px;
+    border-top: 1px solid var(--border);
+    background: var(--card);
+    margin-top: 24px;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .footer-text {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .contact-chip {
+    display: inline-block;
+    background: var(--green-pale);
+    border: 1px solid var(--green-border);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 13px;
+    color: var(--green);
+    font-weight: 600;
+    margin-top: 10px;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-mark">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 3C9 3 7 5 7 8C7 10.5 8.5 12.5 10.5 13.5V19C10.5 19.8 11.2 20.5 12 20.5C12.8 20.5 13.5 19.8 13.5 19V13.5C15.5 12.5 17 10.5 17 8C17 5 15 3 12 3Z" fill="white" opacity="0.9"/>
+    </svg>
+  </div>
+  <span class="logo-text">GymActiv</span>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="hero-label">Juridisch document</div>
+    <div class="hero-title">Privacybeleid</div>
+    <div class="hero-version">Versie 1.0 — 8 juni 2026 · AVG/GDPR-conform</div>
+    <div class="hero-intro">GymActiv hecht groot belang aan de bescherming van uw persoonsgegevens. Dit beleid legt uit welke gegevens wij verzamelen, waarom en welke rechten u heeft.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">1. Verwerkingsverantwoordelijke</div>
+    <div class="body-text">De verwerkingsverantwoordelijke is GymActiv. Voor vragen kunt u ons bereiken via gymactivapp@gmail.com.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">2. Welke gegevens verzamelen wij?</div>
+    <div class="label">Door u verstrekte gegevens</div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Accountgegevens: e-mailadres, naam, geslacht, geboortedatum</span></div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Lichaamsgegevens: lengte, gewicht, streefgewicht</span></div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Voedingslogboek: maaltijden, ingrediënten, porties</span></div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Trainingsgegevens: oefeningen, duur, niveau</span></div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Foto's voor maaltijdherkenning (niet permanent opgeslagen)</span></div>
+    <div class="label">Automatisch verzamelde gegevens</div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Apparaatinformatie: type, besturingssysteem, app-versie</span></div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Gebruiksgegevens: functies gebruikt, sessieduur</span></div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Technische logs: foutmeldingen, prestatiemetingen</span></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">3. Doeleinden en rechtsgronden</div>
+    <div class="row"><span class="row-left">Levering van de dienst</span><span class="row-right">Uitvoering overeenkomst</span></div>
+    <div class="row"><span class="row-left">Gezondheidsgegevens verwerken</span><span class="row-right">Uitdrukkelijke toestemming</span></div>
+    <div class="row"><span class="row-left">Maaltijdherkenning</span><span class="row-right">Uitdrukkelijke toestemming</span></div>
+    <div class="row"><span class="row-left">App verbeteren</span><span class="row-right">Gerechtvaardigd belang</span></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">4. Verwerkers en ontvangers</div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Supabase — Databaseopslag en authenticatie (AVG-conform)</span></div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Anthropic (Claude) — Maaltijdherkenning en coaching. Foto's worden niet permanent bewaard.</span></div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Apple App Store / Google Play — Aankoop- en abonnementsbeheer</span></div>
+    <div class="body-text" style="margin-top:10px;">Wij delen uw gegevens niet met derden voor marketingdoeleinden.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">5. Bewaartermijnen</div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Accountgegevens: tot verwijdering + 30 dagen back-up</span></div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Voedings- en trainingsdata: tot verwijdering van uw account</span></div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Foto's: niet permanent opgeslagen</span></div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Technische logs: maximaal 90 dagen</span></div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Financiële gegevens: 7 jaar (boekhoudwetgeving)</span></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">6. Uw rechten (AVG)</div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Inzage (art. 15)</span></div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Rectificatie (art. 16)</span></div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Verwijdering / recht om vergeten te worden (art. 17)</span></div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Gegevensoverdraagbaarheid (art. 20)</span></div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Bezwaar (art. 21)</span></div>
+    <div class="body-text" style="margin-top:10px;">Account verwijderen: Instellingen → Account → Account verwijderen.</div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">België: gegevensbeschermingsautoriteit.be</span></div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Nederland: autoriteitpersoonsgegevens.nl</span></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">7. Beveiliging</div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Versleutelde verbindingen (HTTPS/TLS)</span></div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Authenticatie via beveiligde tokens (Supabase Auth)</span></div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Row-Level Security — u raadpleegt enkel eigen data</span></div>
+    <div class="bullet"><span class="bullet-dot">•</span><span class="bullet-text">Geen opslag van betalingsgegevens op onze servers</span></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">8. Kinderen</div>
+    <div class="body-text">GymActiv is niet bestemd voor kinderen jonger dan 16 jaar.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">9. Wijzigingen</div>
+    <div class="body-text">Wezenlijke wijzigingen worden minstens 14 dagen op voorhand gecommuniceerd via de App of e-mail.</div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-logo">
+    <div class="logo-mark" style="width:28px;height:28px;border-radius:8px;">
+      <svg viewBox="0 0 24 24" fill="none" style="width:16px;height:16px;">
+        <path d="M12 3C9 3 7 5 7 8C7 10.5 8.5 12.5 10.5 13.5V19C10.5 19.8 11.2 20.5 12 20.5C12.8 20.5 13.5 19.8 13.5 19V13.5C15.5 12.5 17 10.5 17 8C17 5 15 3 12 3Z" fill="white" opacity="0.9"/>
+      </svg>
+    </div>
+    <span style="font-weight:700;font-size:15px;">GymActiv</span>
+  </div>
+  <div class="footer-text">© 2026 GymActiv. Alle rechten voorbehouden.</div>
+  <a href="mailto:gymactivapp@gmail.com" class="contact-chip">gymactivapp@gmail.com</a>
+</footer>
+
+</body>
+</html>
