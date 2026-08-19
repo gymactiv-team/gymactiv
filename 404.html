@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>GymActiv</title>
+<script>
+  // GitHub Pages serveert dit bestand voor elk onbekend pad. Zo blijft de
+  // korte link /gymactiv/r/ABC123 werken zonder dat er per code een bestand
+  // hoeft te bestaan — een statische host kan die immers niet genereren.
+  (function () {
+    var m = location.pathname.match(/\/r\/([A-Za-z0-9]{6})/);
+    if (m) {
+      location.replace("/gymactiv/uitnodiging.html?code=" + m[1].toUpperCase());
+    } else {
+      location.replace("/gymactiv/");
+    }
+  })();
+</script>
+</head>
+<body></body>
+</html>

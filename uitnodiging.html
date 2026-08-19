@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GymActiv — uitnodiging</title>
+<style>
+  :root { --groen:#4A7A3A; --donker:#16210F; --creme:#FAFAF7; --grijs:#6B6F66; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body {
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--creme); color:var(--donker);
+    min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px;
+  }
+  .kaart { width:100%; max-width:380px; text-align:center; }
+  .logo { font-size:24px; font-weight:800; letter-spacing:-.5px; margin-bottom:28px; }
+  .logo span { color:var(--groen); }
+  h1 { font-size:26px; line-height:1.25; letter-spacing:-.6px; margin-bottom:10px; }
+  p.sub { color:var(--grijs); font-size:15px; line-height:1.55; margin-bottom:24px; }
+  .codevak { background:#fff; border-radius:16px; padding:16px; margin-bottom:24px; }
+  .codelabel { font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--grijs); }
+  .code { font-size:30px; font-weight:800; letter-spacing:7px; margin-top:4px; }
+  .knop {
+    display:block; background:var(--donker); color:#fff; text-decoration:none;
+    border-radius:14px; padding:15px; font-weight:700; font-size:15px; margin-bottom:10px;
+  }
+  .knop.licht { background:#fff; color:var(--donker); }
+  .voet { font-size:12px; color:var(--grijs); margin-top:18px; line-height:1.6; }
+</style>
+</head>
+<body>
+  <div class="kaart">
+    <div class="logo">Gym<span>Activ</span></div>
+    <h1>Je bent uitgenodigd</h1>
+    <p class="sub">Installeer GymActiv en vul deze code in bij het registreren. Jij en je vriend krijgen er allebei iets aan.</p>
+
+    <div class="codevak">
+      <div class="codelabel">Uitnodigingscode</div>
+      <div class="code" id="code">—</div>
+    </div>
+
+    <a class="knop" id="play" href="https://play.google.com/store/apps/details?id=com.gymactiv">Download voor Android</a>
+    <a class="knop licht" id="ios" href="https://apps.apple.com/app/id0000000000">Download voor iPhone</a>
+
+    <p class="voet">Heb je de app al? Open GymActiv en vul de code in bij je profiel.</p>
+  </div>
+
+<script>
+(function () {
+  // De code kan op twee manieren binnenkomen:
+  //   ?code=ABC123                (deze pagina, rechtstreeks)
+  //   /gymactiv/r/ABC123          (mooie link, via 404.html van GitHub Pages)
+  function leesCode() {
+    var q = new URLSearchParams(location.search).get("code");
+    if (q) return q;
+    var m = location.pathname.match(/\/r\/([A-Za-z0-9]{6})/);
+    return m ? m[1] : null;
+  }
+
+  var code = (leesCode() || "").replace(/[^A-Za-z0-9]/g, "").toUpperCase().slice(0, 6);
+  if (code.length === 6) {
+    document.getElementById("code").textContent = code;
+
+    // Is de app al geïnstalleerd, dan opent deze poging haar meteen met de
+    // code erin. Gebeurt er niets, dan blijft de gebruiker gewoon op deze
+    // pagina staan en ziet hij de downloadknoppen.
+    var app = document.createElement("iframe");
+    app.style.display = "none";
+    app.src = "gymactiv://r/" + code;
+    document.body.appendChild(app);
+  } else {
+    document.getElementById("code").textContent = "?";
+  }
+})();
+</script>
+</body>
+</html>
